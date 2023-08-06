@@ -1,0 +1,81 @@
+
+body{
+    background-color: gray;
+  }
+    .calsection{
+        margin: 5%;
+    }
+
+    .calculator {
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    width: 300px;
+    }
+
+    #display {
+    padding: 5px;
+    margin: 5px;
+    width: 280px;
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+
+  .top-btns{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 100%;
+  }
+
+  .top-btns-itms{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+  }
+
+  .mdl-btns {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    width: 100%;
+    gap: 10px;
+    margin: 20px 0px;
+  }
+
+  .mdl-key{
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .btm-btns {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btm-key {
+    padding: 2px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+        
+  .white {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+
+  .blue {
+    background-color: blue;
+    color: white;
+  }

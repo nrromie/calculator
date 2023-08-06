@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+<section class="calsection" id="tools">
+
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+
+
+        <div class="top-btns">
+          <div class="top-btns-itms">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+          </div>
+          <div></div>
+          <div class="top-btns-itms">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+            <input class="top-key" type="button" value="." onclick="addToDisplay('.')">
+          </div>
+        </div>
+
+        <div class="mdl-btns">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+          <input class="mdl-key" type="button" value="log" onclick="addToDisplay('log')">
+        </div>
+
+        <div class="btm-btns">
+          <input class="btm-key white" type="button" value="7" onclick="addToDisplay('7')">
+          <input class="btm-key white" type="button" value="8" onclick="addToDisplay('8')">
+          <input class="btm-key white" type="button" value="9" onclick="addToDisplay('9')">
+          <input class="btm-key blue" type="button" value="DEL" onclick="clearDisplay()">
+          <input class="btm-key blue" type="button" value="AC" onclick="clearDisplay()">
+
+          <input class="btm-key white" type="button" value="4" onclick="addToDisplay('4')">
+          <input class="btm-key white" type="button" value="5" onclick="addToDisplay('5')">
+          <input class="btm-key white" type="button" value="6" onclick="addToDisplay('6')">
+          <input class="btm-key white" type="button" value="*" onclick="addToDisplay('*')">
+          <input class="btm-key white" type="button" value="/" onclick="addToDisplay('/')">
+
+          <input class="btm-key white" type="button" value="1" onclick="addToDisplay('1')">
+          <input class="btm-key white" type="button" value="2" onclick="addToDisplay('2')">
+          <input class="btm-key white" type="button" value="3" onclick="addToDisplay('3')">
+          <input class="btm-key white" type="button" value="+" onclick="addToDisplay('+')">
+          <input class="btm-key white" type="button" value="-" onclick="addToDisplay('-')">
+          
+          <input class="btm-key white" type="button" value="0" onclick="addToDisplay('0')">
+          <input class="btm-key white" type="button" value="." onclick="addToDisplay('.')">
+          <input class="btm-key white" type="button" value="X" onclick="addToDisplay('X10^x')">
+          <input class="btm-key white" type="button" value="Ans" onclick="addToDisplay('Ans')">
+          <input class="btm-key white" type="button" value="=" onclick="calculate()">
+        </div>
+    </div>
+</section>
+    
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
