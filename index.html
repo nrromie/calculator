@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        html {
+            background-color: black;
+        }
+
+        .container {
+            padding: 8px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            max-width: 700px;
+            border: solid 1px gray;
+            border-radius: 10px;
+        }
+
+        #display {
+            width: 100%;
+            text-align: right;
+            font-size: 2rem;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            width: 100%;
+        }
+
+        .other-btns {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            width: 100%;
+        }
+
+        .btn {
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .obtn {
+            background-color: black;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        #equal {
+            grid-column: span 2;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <input id="display" type="text" readonly>
+
+            <div class="other-btns">
+                <input class="obtn" type="button" value="^" onclick="handleOperators('^','**')">
+                <input class="obtn" type="button" value="%" onclick="handleOperators('%', '/100')"">
+                <input class=" obtn" type="button" value="π" onclick="handleOperators('π', '3.1416')">
+                <input class="obtn" type="button" value="(" onclick="handleInput('(')">
+                <input class="obtn" type="button" value=")" onclick="handleInput(')')">
+            </div>
+
+            <div class="buttons">
+                <input class="btn" type="button" value="9" onclick="handleInput(9)">
+                <input class="btn" type="button" value="8" onclick="handleInput(8)">
+                <input class="btn" type="button" value="7" onclick="handleInput(7)">
+
+                <input class="btn" type="button" value="BC" onclick="handleBC()">
+                <input class="btn" type="button" value="CLR" onclick="handleCLR()">
+
+                <input class="btn" type="button" value="6" onclick="handleInput(6)">
+                <input class="btn" type="button" value="5" onclick="handleInput(5)">
+                <input class="btn" type="button" value="4" onclick="handleInput(4)">
+
+                <input class="btn" type="button" value="+" onclick="handleInput('+')">
+                <input class="btn" type="button" value="-" onclick="handleInput('-')">
+
+                <input class="btn" type="button" value="3" onclick="handleInput(3)">
+                <input class="btn" type="button" value="2" onclick="handleInput(2)">
+                <input class="btn" type="button" value="1" onclick="handleInput(1)">
+
+                <input class="btn" type="button" value="×" onclick="handleOperators('×','*')">
+                <input class="btn" type="button" value="÷" onclick="handleOperators('÷','/')">
+
+                <input class="btn" type="button" value="0" onclick="handleInput(0)">
+                <input class="btn" type="button" value="." onclick="handleInput('.')">
+                <input class="btn" type="button" value="Ans" onclick="handleAns()">
+
+                <input class="btn" id="equal" type="button" value="=" onclick="calculate()">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let equation = ""
+        const display = document.getElementById("display")
+        const handleInput = (n) => {
+            equation = equation + n
+            display.value = display.value + n
+        }
+
+        const handleOperators = (t, o) => {
+            equation = equation + o
+            display.value = display.value + t
+        }
+
+        const calculate = () => {
+            const result = eval(equation)
+            display.value = result
+            equation = "" + result
+            localStorage.setItem('prevAns', result);
+            prevAns = result;
+        }
+
+        const handleBC = () => {
+            equation = equation.slice(0, -1)
+            display.value = display.value.slice(0, -1)
+        }
+
+        const handleCLR = () => {
+            equation = ""
+            display.value = ""
+        }
+
+        const handleAns = () => {
+            let prevAns = localStorage.getItem('prevAns') || "";
+            equation += prevAns;
+            display.value += prevAns;
+        }
+    </script>
+</body>
+
+</html>
